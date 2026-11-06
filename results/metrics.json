@@ -1,0 +1,134 @@
+{
+  "data": {
+    "rows": 6000,
+    "train_rows": 4800,
+    "test_rows": 1200,
+    "base_conversion_rate": 0.1237,
+    "seed": 42,
+    "synthetic": true
+  },
+  "xgboost": {
+    "accuracy": 0.8725,
+    "precision": 0.4,
+    "recall": 0.0676,
+    "f1": 0.1156,
+    "roc_auc": 0.728,
+    "confusion_matrix": {
+      "true_negative": 1037,
+      "false_positive": 15,
+      "false_negative": 138,
+      "true_positive": 10
+    }
+  },
+  "logistic_regression_baseline": {
+    "accuracy": 0.8783,
+    "precision": 0.5625,
+    "recall": 0.0608,
+    "f1": 0.1098,
+    "roc_auc": 0.7405,
+    "confusion_matrix": {
+      "true_negative": 1045,
+      "false_positive": 7,
+      "false_negative": 139,
+      "true_positive": 9
+    }
+  },
+  "feature_importance_gain": [
+    {
+      "feature": "price_pkr",
+      "gain": 11.43,
+      "gain_share_pct": 11.24
+    },
+    {
+      "feature": "time_on_site_min",
+      "gain": 10.86,
+      "gain_share_pct": 10.68
+    },
+    {
+      "feature": "returning_visitor",
+      "gain": 9.3,
+      "gain_share_pct": 9.14
+    },
+    {
+      "feature": "pages_viewed",
+      "gain": 7.6,
+      "gain_share_pct": 7.47
+    },
+    {
+      "feature": "trip_type_hotel",
+      "gain": 7.13,
+      "gain_share_pct": 7.01
+    },
+    {
+      "feature": "trip_type_flight",
+      "gain": 5.54,
+      "gain_share_pct": 5.45
+    },
+    {
+      "feature": "channel_direct",
+      "gain": 5.41,
+      "gain_share_pct": 5.32
+    },
+    {
+      "feature": "trip_type_umrah",
+      "gain": 4.89,
+      "gain_share_pct": 4.81
+    },
+    {
+      "feature": "channel_social",
+      "gain": 4.5,
+      "gain_share_pct": 4.42
+    },
+    {
+      "feature": "device_desktop",
+      "gain": 4.37,
+      "gain_share_pct": 4.3
+    },
+    {
+      "feature": "device_mobile",
+      "gain": 4.26,
+      "gain_share_pct": 4.19
+    },
+    {
+      "feature": "trip_duration_days",
+      "gain": 3.65,
+      "gain_share_pct": 3.59
+    },
+    {
+      "feature": "weekend_departure",
+      "gain": 3.63,
+      "gain_share_pct": 3.57
+    },
+    {
+      "feature": "trip_type_tour",
+      "gain": 3.53,
+      "gain_share_pct": 3.47
+    },
+    {
+      "feature": "channel_paid_search",
+      "gain": 3.33,
+      "gain_share_pct": 3.27
+    },
+    {
+      "feature": "days_advance",
+      "gain": 3.32,
+      "gain_share_pct": 3.26
+    },
+    {
+      "feature": "channel_organic",
+      "gain": 3.13,
+      "gain_share_pct": 3.08
+    },
+    {
+      "feature": "party_size",
+      "gain": 3.09,
+      "gain_share_pct": 3.04
+    },
+    {
+      "feature": "trip_type_holiday_package",
+      "gain": 2.74,
+      "gain_share_pct": 2.69
+    }
+  ],
+  "best_model": "logistic_regression_baseline"
+}

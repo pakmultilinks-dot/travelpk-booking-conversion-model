@@ -1,0 +1,77 @@
+[
+  {
+    "request": "GET /health",
+    "status": 200,
+    "response": {
+      "status": "ok",
+      "model": "xgboost",
+      "model_file": "model_xgboost.pkl"
+    }
+  },
+  {
+    "request": "POST /predict likely_to_book",
+    "status": 200,
+    "payload": {
+      "trip_type": "flight",
+      "price_pkr": 28000,
+      "days_advance": 45,
+      "party_size": 2,
+      "trip_duration_days": 4,
+      "device": "desktop",
+      "channel": "direct",
+      "pages_viewed": 18,
+      "time_on_site_min": 22.5,
+      "returning_visitor": 1,
+      "weekend_departure": 0
+    },
+    "response": {
+      "booking_probability": 0.6909,
+      "predicted_label": 1,
+      "predicted_text": "likely to book"
+    }
+  },
+  {
+    "request": "POST /predict unlikely_to_book",
+    "status": 200,
+    "payload": {
+      "trip_type": "umrah",
+      "price_pkr": 420000,
+      "days_advance": 3,
+      "party_size": 5,
+      "trip_duration_days": 14,
+      "device": "mobile",
+      "channel": "social",
+      "pages_viewed": 2,
+      "time_on_site_min": 0.8,
+      "returning_visitor": 0,
+      "weekend_departure": 1
+    },
+    "response": {
+      "booking_probability": 0.0031,
+      "predicted_label": 0,
+      "predicted_text": "unlikely to book"
+    }
+  },
+  {
+    "request": "POST /predict edge_case_minimal_engagement",
+    "status": 200,
+    "payload": {
+      "trip_type": "hotel",
+      "price_pkr": 12000,
+      "days_advance": 90,
+      "party_size": 1,
+      "trip_duration_days": 1,
+      "device": "mobile",
+      "channel": "organic",
+      "pages_viewed": 1,
+      "time_on_site_min": 0.2,
+      "returning_visitor": 0,
+      "weekend_departure": 0
+    },
+    "response": {
+      "booking_probability": 0.0407,
+      "predicted_label": 0,
+      "predicted_text": "unlikely to book"
+    }
+  }
+]
